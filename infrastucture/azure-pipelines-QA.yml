@@ -16,6 +16,8 @@ steps:
   displayName: 'Install Node.js'
 
 - script: |
+    npm config set prefix=$AGENT_TOOLSDIRECTORY/node
+    export PATH=$AGENT_TOOLSDIRECTORY/node/bin:$PATH
     npm install
     npm run build
   displayName: 'npm install and build'
